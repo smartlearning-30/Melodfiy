@@ -40,7 +40,9 @@ const { exec } = require('child_process');
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://smelody.netlify.app'  // ✅ <-- allow your frontend here
+}));
 
 // ✅ Secure YouTube Search
 app.get('/search', async (req, res) => {
