@@ -9,14 +9,14 @@ RUN apt-get update && \
 # Create app directory
 WORKDIR /app
 
-# Copy all files to container
+# Copy all project files into container
 COPY . .
 
 # Install Node.js dependencies
 RUN npm install
 
-# Expose port
+# Expose port used by the app
 EXPOSE 3000
 
-# Start your app
+# Start the server
 CMD ["node", "server.js"]

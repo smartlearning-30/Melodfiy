@@ -1,14 +1,11 @@
 services:
-  - type: web
+  - type: web           # Web service
     name: melodify-backend
-    env: node
+    env: docker         # Use Docker environment
     plan: free
-    buildCommand: |
-      apt-get update && \
-      apt-get install -y yt-dlp && \
-      npm install
-    startCommand: node server.js
+    autoDeploy: true    # Auto-deploy on GitHub push
+    branch: main        # Deploy from main branch
+    rootDir: Melodify-Backend # Path to backend folder
     envVars:
       - key: YOUTUBE_API_KEY
-        value: 
-    rootDir: Melodify-Backend
+        fromDotEnv: true      # Pull from .env, or set manually in dashboard
