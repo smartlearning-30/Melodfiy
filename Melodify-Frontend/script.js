@@ -6,7 +6,8 @@ async function searchSongs() {
 
   try {
     // ✅ Call your own backend, not YouTube directly
-const res = await fetch(`https://melodfiy-backend.onrender.com/search?q=${encodeURIComponent(query)}`);
+const res = await fetch(`https://melodfiy.onrender.com/search?q=${encodeURIComponent(query)}`);
+
 
     const data = await res.json();
 
@@ -55,7 +56,8 @@ async function playAudioFromId(videoId) {
     audio.insertAdjacentHTML("beforebegin", "<p id='loading' class='text-yellow-400'>⏳ Loading song...</p>");
 
     if (!audioUrl) {
-      const res = await fetch(`https://melodfiy-backend.onrender.com/audio?videoId=${videoId}`);
+      const res = await fetch(`https://melodfiy.onrender.com/audio?videoId=${videoId}`);
+
       const data = await res.json();
       audioUrl = data.audioUrl;
       audioCache[videoId] = audioUrl;
