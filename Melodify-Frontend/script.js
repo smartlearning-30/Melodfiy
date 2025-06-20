@@ -55,7 +55,7 @@ async function playAudioFromId(videoId) {
     audio.insertAdjacentHTML("beforebegin", "<p id='loading' class='text-yellow-400'>⏳ Loading song...</p>");
 
     if (!audioUrl) {
-      const res = await fetch(`http://localhost:3000/audio?videoId=${videoId}`);
+      const res = await fetch(`https://melodfiy-backend.onrender.com/audio?videoId=${videoId}`);
       const data = await res.json();
       audioUrl = data.audioUrl;
       audioCache[videoId] = audioUrl;
