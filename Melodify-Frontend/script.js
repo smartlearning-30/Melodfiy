@@ -6,7 +6,7 @@ async function searchSongs() {
 
   try {
     // ✅ Call your own backend, not YouTube directly
-const res = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(query)}`);
+const res = await fetch(`https://melodfiy-backend.onrender.com/search?q=${encodeURIComponent(query)}`);
 
     const data = await res.json();
 
