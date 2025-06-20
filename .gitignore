@@ -1,0 +1,15 @@
+# Ignore secret and unnecessary files
+
+# Hide your API key
+Melodify-Backend/.env
+
+# Hide installed modules
+Melodify-Backend/node_modules/
+
+# Hide logs
+*.log
+
+# Hide VS Code and system files
+.vscode/
+.DS_Store
+Thumbs.db
